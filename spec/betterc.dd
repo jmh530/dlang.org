@@ -2,10 +2,13 @@ Ddoc
 
 $(SPEC_S Better C,
 
-`-betterC` is a command-line flag for `dmd`,
-which restricts the compiler's support of certain runtime features.
-Notably, D programs or libraries compiled with `betterC` aren't linked with Druntime.
-The use of compile-time features is not restricted in any way.
+`-betterC` is a command-line flag for `dmd` that
+restricts the compiler's support of certain runtime features, such as garbage
+collection, classes, and more (see below).
+These features are disabled because D programs or libraries compiled with `betterC` are
+not linked with Druntime.
+The use of runtime features that do not depend on Druntime or compile-time features
+is not restricted in any way.
 
 Limiting a program or library to this subset of runtime features is useful
 when targeting constrained environments where the use of such features is not practical or possible.
